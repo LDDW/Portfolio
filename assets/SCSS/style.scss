@@ -1,0 +1,694 @@
+/* ============= IMPORTS ============= */
+
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+@import '_variables.scss';
+
+/* ============= GÉNÉRAL ============= */
+
+*,
+ ::before,
+ ::after {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    font-family: $karla;
+    font-size: $f-3;
+    background: $white;
+    color: $grey-2;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    display: block;
+    text-decoration: none;
+    color: $grey-2;
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+    line-height: 1;
+}
+
+h1 {
+    font-family: $montserrat;
+    font-size: $f-1;
+    @include tablet {
+        font-size: 35px;
+    }
+    @include desktop {
+        font-size: 50px;
+    }
+}
+
+h2 {
+    font-size: $f-2;
+    @include tablet {
+        font-size: $f-1;
+    }
+}
+
+.bx {
+    @extend %flex;
+    font-size: 20px;
+}
+
+.svg_bg {
+    width: 100%;
+    img {
+        width: 100%;
+        display: block;
+    }
+}
+
+.btn_redirect {
+    display: inline-block;
+    margin-top: $m-4;
+    a {
+        background: $blue;
+        padding: $p-3 $p-4;
+        color: $white;
+        line-height: 0;
+        @extend %flex;
+        .bx {
+            margin-left: $m-1;
+        }
+    }
+}
+
+.btn {
+    cursor: pointer;
+}
+
+
+/* ============= IMG CONTAINER ============= */
+
+.img_container {
+    overflow: hidden;
+    img {
+        width: 100%;
+        &.img_card {
+            width: auto;
+            height: 250px;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+
+/* ============= SECTIONS ============= */
+
+section {
+    width: 100%;
+    .container {
+        padding: $p-5;
+        @include tablet {
+            padding: $pm-1 $pl-1;
+        }
+        @include laptop {
+            padding: $pm-1 $pxl-2;
+        }
+        @include desktop {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+/* ============= HEADER ============= */
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: $header-height;
+    padding: 0 $p-5;
+    background: transparent;
+    box-shadow: 0 5px 40px 0 rgba($color: $grey-2, $alpha: 0);
+    @extend %fast-transition;
+    @include flex-justify-content(center);
+    @include tablet {
+        height: calc($header-height + 20px);
+        padding: 0 $pl-1;
+    }
+}
+
+#header.scrolled_header {
+    background: $white;
+    box-shadow: 0 5px 40px 0 rgba($color: $grey-2, $alpha: 0.3);
+    height: calc($header-height - 10px);
+    @include tablet {
+        height: $header-height;
+    }
+}
+
+.navbar {
+    width: 100%;
+    @include flex-justify-content(space-between);
+}
+
+#btn-nav-hamburger {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    @include flex-justify-content(center);
+    .hamburger_bar {
+        position: relative;
+        width: 100%;
+        height: 2px;
+        background: $grey-2;
+        transform: rotate(0deg);
+        @extend %fast-transition;
+    }
+    .hamburger_bar::before,
+    .hamburger_bar::after {
+        content: "";
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: $grey-2;
+        transform: rotate(0deg);
+        @extend %fast-transition;
+    }
+    .hamburger_bar::after {
+        top: 10px;
+    }
+    /* ===== ON CLICK HAMBURGER BUTTON ===== */
+    .hamburger_bar.active_btn_hamburger {
+        transform: rotate(45deg);
+    }
+    .hamburger_bar.active_btn_hamburger::before,
+    .hamburger_bar.active_btn_hamburger::after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+}
+
+.navbar_brand h1 {
+    text-transform: uppercase;
+    font-size: $f-2;
+    @include tablet {
+        font-size: $f-1;
+    }
+}
+
+#btn-contact {
+    width: 30px;
+    height: 30px;
+    @include flex-justify-content(center);
+    a {
+        .bx {
+            font-size: $f-1;
+        }
+    }
+}
+
+.navbar_list {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    padding: $header-height $p-5 $p-5 $p-5;
+    background: $white;
+    z-index: -1;
+    @extend %fast-transition;
+    @include tablet {
+        padding: calc($header-height + 20px) $pl-1 $pm-1 $pl-1;
+    }
+    .navbar_item {
+        margin-bottom: $m-4;
+        .navbar_link {
+            display: inline-block;
+            padding: $p-3;
+            font-size: $f-2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            @include tablet {
+                padding: $p-4 0;
+            }
+        }
+    }
+}
+
+.navbar_list.active_navbar {
+    left: 0;
+}
+
+
+/* ============= SECTION HOME ============= */
+
+#home {
+    height: 100vh;
+    overflow: hidden;
+    @include flex-justify-content(center);
+    .svg_bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80%;
+        @include tablet {
+            width: 55%;
+        }
+        @include laptop {
+            width: 50%;
+        }
+        @include desktop {
+            width: 40%;
+        }
+    }
+    .container_home {
+        text-align: center;
+        @include tablet {
+            display: flex;
+            align-items: center;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        .presentation_id {
+            width: 220px;
+            height: 220px;
+            margin: 0 auto $m-4 auto;
+            border-radius: 50%;
+            border: solid $white 15px;
+            box-shadow: 0px 5px 15px rgba($color: $grey-2, $alpha: 0.3);
+            z-index: 10;
+            @include tablet {
+                width: 250px;
+                height: 250px;
+                margin: 0;
+            }
+            @include laptop {
+                width: 300px;
+                height: 300px;
+                border: solid $white 20px;
+            }
+            @include desktop {
+                width: 350px;
+                height: 350px
+            }
+        }
+        .presentation_infos {
+            h1 {
+                text-transform: uppercase;
+            }
+            @include tablet {
+                h1::after {
+                    content: "Welcome";
+                    position: absolute;
+                    left: 50%;
+                    top: 150px;
+                    font-size: 150px;
+                    color: rgba($color: $grey-1, $alpha: 0.6);
+                    z-index: -1;
+                    @include laptop {
+                        top: 180px;
+                        left: 70%;
+                    }
+                    @include desktop {
+                        left: -50%;
+                        top: 100px;
+                    }
+                }
+            }
+            p {
+                margin: $m-3 0;
+            }
+            @include tablet {
+                width: 60%;
+                text-align: left;
+            }
+            .btn_download {
+                display: inline-block;
+                background: $blue;
+                a {
+                    padding: $p-3 $p-4;
+                    color: $white;
+                    line-height: 0;
+                    @extend %flex;
+                    .bx {
+                        margin-right: $m-1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ============= SECTION PRESENTATION ============= */
+
+#presentation {
+    .bg_container {
+        width: 100%;
+        background: $grey-1;
+    }
+    .container {
+        h2 {
+            margin-bottom: $m-3;
+        }
+        p {
+            margin-bottom: $m-4;
+            text-align: justify;
+            line-height: 22px;
+        }
+        ul {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            li {
+                width: 100%;
+                position: relative;
+                &:nth-child(3) {
+                    text-align: center;
+                    @include tablet {
+                        text-align: unset;
+                    }
+                }
+            }
+            .btn_redirect {
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+/* ============= SECTION PARCOURS ============= */
+
+#parcours {
+    .container {
+        padding-top: $pxl-1;
+        padding-bottom: $pxl-1;
+    }
+    .section-title:nth-of-type(2) {
+        h2 {
+            margin-top: $m-5;
+        }
+    }
+    .timeline-container {
+        .timeline_list {
+            border-left: 2px solid $grey-2;
+            position: relative;
+            margin: $m-3 0 $m-5 $m-2;
+            padding-left: $p-4;
+            .timeline_item::before {
+                content: "";
+                position: absolute;
+                top: 10px;
+                left: -25px;
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: $grey-2;
+            }
+            .timeline_item {
+                padding: $p-3;
+                margin-bottom: $m-5;
+                background: $grey-1;
+                .timeline_title {
+                    display: block;
+                    margin-bottom: $m-1;
+                    font-weight: bold;
+                }
+            }
+            .timeline_item:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+
+/* ============= SECTION PROJETS ============= */
+
+#projet {
+    .bg_container {
+        width: 100%;
+        background: $grey-1;
+    }
+    .container {
+        background: $grey-1;
+        text-align: center;
+        h2 {
+            text-align: left;
+            margin-bottom: $m-5;
+        }
+        .projet_list {
+            @include tablet {
+                display: grid;
+                grid-template-columns: repeat(2, 49%);
+                column-gap: 2%;
+            }
+            @include laptop {
+                display: grid;
+                grid-template-columns: repeat(3, 32%);
+                column-gap: 1.83%;
+            }
+            .projet_card {
+                box-shadow: 0 5px 15px rgba($color: $grey-2, $alpha: 0.2);
+                margin-bottom: 6%;
+                .projet_illustration {
+                    position: relative;
+                    width: 100%;
+                    height: 250px;
+                    background: $white;
+                    .btn_plus {
+                        @extend %flex;
+                        position: absolute;
+                        bottom: 10px;
+                        right: 10px;
+                        z-index: 10;
+                        padding: $p-2;
+                        background: $grey-2;
+                        color: $white;
+                        border-radius: 50%;
+                        transform: rotate(0deg);
+                        @extend %fast-transition;
+                    }
+                    .btn_plus.active_btn {
+                        transform: rotate(45deg);
+                    }
+                     ::-webkit-scrollbar {
+                        display: none;
+                    }
+                    .desc {
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 1;
+                        width: 100%;
+                        height: 100%;
+                        padding: $p-5;
+                        text-align: left;
+                        overflow: scroll;
+                        background: rgba($color: $grey-2, $alpha: 0.8);
+                        color: rgba($color: $white, $alpha: 0.8);
+                        visibility: hidden;
+                        opacity: 0;
+                        @extend %fast-transition;
+                        p {
+                            text-align: justify;
+                            line-height: 25px;
+                        }
+                        .btn_redirect {
+                            margin-top: $m-5;
+                        }
+                    }
+                    .desc.active_element {
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+                .projet_infos {
+                    padding: $p-3;
+                    text-align: left;
+                    background: $grey-2;
+                    color: rgba($color: $white, $alpha: 0.9);
+                    h3 {
+                        margin-bottom: $m-1;
+                        text-transform: uppercase;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/* ============= SECTION CONTACT ============= */
+
+#contact {
+    position: relative;
+    @include tablet {
+        padding: $pl-1 0;
+    }
+    @include laptop {
+        padding: $pxl-1 0;
+    }
+    .contact_container {
+        text-align: center;
+        @include tablet {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+        }
+        .form_container {
+            @include tablet {
+                margin-right: $mxl-1;
+            }
+            h2 {
+                margin-bottom: $m-2;
+            }
+            p {
+                margin-bottom: $m-5;
+                line-height: 23px;
+            }
+            form {
+                @include tablet {
+                    text-align: left;
+                }
+                input[type="text"],
+                input[type="email"],
+                textarea {
+                    display: block;
+                    width: 100%;
+                    @include tablet {
+                        min-width: 400px;
+                    }
+                    @include laptop {
+                        min-width: 600px;
+                    }
+                    @include desktop {
+                        min-width: 700px;
+                    }
+                }
+                input[type="text"],
+                input[type="email"],
+                button[type="submit"],
+                textarea {
+                    padding: $p-3;
+                    margin-top: $m-3;
+                    border: none;
+                    border-radius: 0;
+                    -webkit-border-radius: 0;
+                    -moz-border-radius: 0;
+                    font-size: $f-3;
+                    font-family: $karla;
+                    background: $grey-1;
+                    outline: none;
+                }
+                textarea {
+                    resize: none;
+                }
+                button[type="submit"] {
+                    width: 100%;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: $f-3;
+                    font-family: $montserrat;
+                    background: $grey-2;
+                    color: $white;
+                    cursor: pointer;
+                    @include tablet {
+                        width: auto;
+                        display: inline-block;
+                        padding: $p-3 $pm-1;
+                    }
+                }
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover,
+                input:-webkit-autofill:focus {
+                    -webkit-text-fill-color: $grey-2;
+                    box-shadow: 0 0 0px 1000px $grey-1 inset;
+                    transition: background-color 5000s ease-in-out 0s;
+                }
+            }
+        }
+        .social_infos {
+            width: 100%;
+            margin-top: $m-5;
+            @include tablet {
+                width: auto;
+                display: inline-block;
+                margin: 0;
+            }
+            .list_social_infos {
+                width: 100%;
+                background: $grey-1;
+                @include flex-justify-content(space-around);
+                @include tablet {
+                    flex-direction: column;
+                    align-items: unset;
+                    justify-content: unset;
+                }
+                .item_social_infos {
+                    line-height: 0;
+                    padding: $p-4;
+                    a {
+                        @extend %flex;
+                        @include tablet {
+                            .bx {
+                                font-size: 25px;
+                            }
+                        }
+                    }
+                    @include tablet {
+                        padding: $p-5;
+                    }
+                }
+            }
+        }
+    }
+    .svg_bg {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 90%;
+        z-index: -1;
+        @include tablet {
+            width: 75%;
+        }
+        @include laptop {
+            width: 60%;
+            max-width: 860px;
+        }
+    }
+}
+
+
+/* ============= FOOTER ============= */
+
+#footer {
+    text-align: center;
+    background: $grey-2;
+    .copyright {
+        padding: $p-5;
+        border-top: 1px solid rgba($color: $grey-1, $alpha: 0.2);
+        p {
+            color: $white;
+        }
+    }
+}
