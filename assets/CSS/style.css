@@ -393,7 +393,25 @@ section .container {
   margin-right: 5px;
 }
 
-/* ============= SECTION PRESENTATION ============= */
+#about-me .container {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+#about-me .container h2 {
+  margin-bottom: 15px;
+}
+#about-me .container p {
+  margin-bottom: 25px;
+}
+#about-me .container .img_container {
+  padding: 15px;
+  max-width: 250px;
+}
+#about-me .container .slider_container {
+  margin-bottom: 60px;
+}
+
+/* ============= SECTION PRESENTATION BTS ============= */
 #presentation .bg_container {
   width: 100%;
   background: #f4f4f4;

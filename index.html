@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="assets/CSS/style.css">
     <link rel="stylesheet" href="assets/libs/boxicons/css/boxicons.min.css">
     <link rel="stylesheet" href="assets/libs/aos/aos.css">
+    <link rel="stylesheet" href="assets/libs/slick/slick.css" />
+    <link rel="stylesheet" href="assets/libs/slick/slick-theme.css" />
 </head>
 
 <body>
@@ -18,24 +20,21 @@
             <div id="btn-nav-hamburger">
                 <div class="hamburger_bar"></div>
             </div>
-
             <div class="navbar_brand">
                 <h1>Benjamin</h1>
             </div>
-
             <div id="btn-contact" class="btn">
                 <a href="#contact"><i class='bx bx-envelope'></i></a>
             </div>
-
             <ul class="navbar_list">
                 <li class="navbar_item">
                     <a href="#" data-id="home" class="navbar_link">Accueil</a>
                 </li>
                 <li class="navbar_item">
-                    <a href="#" data-id="presentation" class="navbar_link">Présentation</a>
+                    <a href="#" data-id="about-me" class="navbar_link">À propos de moi</a>
                 </li>
                 <li class="navbar_item">
-                    <a href="#" data-id="skills" class="navbar_link">compétences</a>
+                    <a href="#" data-id="presentation" class="navbar_link">Présentation BTS</a>
                 </li>
                 <li class="navbar_item">
                     <a href="#" data-id="parcours" class="navbar_link">parcours</a>
@@ -59,13 +58,10 @@
                 <div class="svg_bg">
                     <img src="assets/IMG/svgBg1.svg" alt="" data-aos="fade-down">
                 </div>
-
                 <div class="container_home">
-
                     <div class="img_container presentation_id" data-aos="fade-up">
                         <img src="assets/IMG/skin.jpeg" alt="">
                     </div>
-
                     <div class="presentation_infos">
                         <h1 data-aos="fade-right">Bienvenue sur mon portfolio</h1>
                         <p data-aos="fade-right" data-aos-delay="100">BTS SIO SLAM</p>
@@ -73,7 +69,67 @@
                             <a href="download/CV.pdf" download target="blank"><i class='bx bx-file'></i>Télécharger mon CV</a>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- ===== SECTION À PROPOS DE MOI ===== -->
+
+        <section id="about-me" data-aos="fade-up">
+            <div class="container">
+                <h2 data-aos="fade-up">Mes compétences</h2>
+                <div class="slider_container" data-aos="fade-up">
+                    <div class="img_container">
+                        <img src="assets/IMG/html.png" alt="image du logo html">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/css.png" alt="image du logo css">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/sass.png" alt="image du logo sass">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/js.png" alt="image du logo javascript">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/jquery.png" alt="image du logo jquery">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/php.png" alt="image du logo php">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/mysql.png" alt="image du logo mysql">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/Laravel.png" alt="image du logo laravel">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/java.png" alt="image du logo java">
+                    </div>
+                </div>
+                <h2 data-aos="fade-up">Mes outils de travail</h2>
+                <div class="slider_container" data-aos="fade-up">
+                    <div class="img_container">
+                        <img src="assets/IMG/vs-code.png" alt="image du logo visual studio code">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/eclipse.png" alt="image du logo eclipse java">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/github.png" alt="image du logo visual studio code">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/g-drive.png" alt="image du logo google drive">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/notion.png" alt="image du logo notion">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/trello.png" alt="image du logo trello">
+                    </div>
+                    <div class="img_container">
+                        <img src="assets/IMG/adobe-xd.png" alt="image du logo adobe xd">
+                    </div>
                 </div>
             </div>
         </section>
@@ -84,7 +140,6 @@
             <div class="svg_bg">
                 <img src="assets/IMG/svgBg2.svg" alt="">
             </div>
-
             <div class="bg_container">
                 <div class="container">
                     <h2 data-aos="fade-up">Qu'est-ce que le BTS SIO ?</h2>
@@ -117,7 +172,6 @@
                     </ul>
                 </div>
             </div>
-
             <div class="svg_bg">
                 <img src="assets/IMG/svgBg3.svg" alt="">
             </div>
@@ -130,7 +184,6 @@
                 <div class="section-title" data-aos="fade-up">
                     <h2>Formations</h2>
                 </div>
-
                 <div class="timeline-container">
                     <ul class="timeline_list" data-aos="fade-before-up">
                         <li class="timeline_item" data-aos="fade-up">
@@ -153,30 +206,22 @@
                         </li>
                     </ul>
                 </div>
-
                 <div class="section-title" data-aos="fade-up">
                     <h2>Stages</h2>
                 </div>
-
                 <div class="timeline-container">
                     <ul class="timeline_list" data-aos="fade-before-up">
                         <li class="timeline_item" data-aos="fade-up">
                             <span class="timeline_title">Janvier - Février 2022</span>
-                            <p>
-                                Stage dans l'association Amon pour réaliser un site web.
-                            </p>
+                            <p>Stage dans l'association Amon pour réaliser un site web.</p>
                         </li>
                         <li class="timeline_item" data-aos="fade-up" data-aos-delay="100">
                             <span class="timeline_title">Juillet 2021</span>
-                            <p>
-                                Stage dans l'entreprise Soldicom pour découvrir le métier de développeur web.
-                            </p>
+                            <p>Stage dans l'entreprise Soldicom pour découvrir le métier de développeur web.</p>
                         </li>
                         <li class="timeline_item" data-aos="fade-up" data-aos-delay="200">
                             <span class="timeline_title">Mai - Juin 2021</span>
-                            <p>
-                                Stage dans l'association Ukerun pour réaliser un site web.
-                            </p>
+                            <p>Stage dans l'association Ukerun pour réaliser un site web.</p>
                         </li>
                     </ul>
                 </div>
@@ -190,15 +235,12 @@
                 <div class="svg_bg">
                     <img src="assets/IMG/svgBg4.svg" alt="">
                 </div>
-
                 <div class="bg_container">
                     <div class="container">
                         <div class="section-title">
                             <h2>Projets</h2>
                         </div>
-
                         <ul class="projet_list">
-
                             <li class="projet_card" data-aos="zoom-in-up" data-aos-delay="100">
                                 <div class="projet_illustration img_container">
                                     <div class="img_container">
@@ -210,14 +252,12 @@
                                     <div class="desc">
                                         <p>La création de mon portfolio a été faite avec HTML, SCSS et JavaScript. Le portfolio est accompagné d'une librairie d'animation.</p>
                                     </div>
-
                                 </div>
                                 <div class="projet_infos">
                                     <h3 class="title">Portfolio</h3>
                                     <p class="langage">HTML, CSS, JS</p>
                                 </div>
                             </li>
-
                             <li class="projet_card" data-aos="zoom-in-up" data-aos-delay="100">
                                 <div class="projet_illustration img_container">
                                     <div class="img_container">
@@ -230,14 +270,12 @@
                                         <p>Le projet GSB (Galaxy Swiss Bourdin) est un projet réaliser au cours de mon BTS. Le but du projet GSB était de passer une application sous Microsoft Acces en format web. GSB a été réaliser avec l'HTML, le CSS, le
                                             JavaScript et Jquery, Laravel et MYSQL.</p>
                                     </div>
-
                                 </div>
                                 <div class="projet_infos">
                                     <h3 class="title">GSB</h3>
                                     <p class="langage">HTML, SCSS, JS, LARAVEL, MYSQL</p>
                                 </div>
                             </li>
-
                             <li class="projet_card" data-aos="zoom-in-up" data-aos-delay="100">
                                 <div class="projet_illustration img_container">
                                     <div class="img_container">
@@ -250,18 +288,13 @@
                                         <p>Amon e-sport est un projet que j'ai plus réaliser durant mon stage de deuxième année. L’objectif de l’association est de développer des projets dans l'e-sport par organisation de plusieurs compétitions en ligne,
                                             streaming, participation à des LANS et tournois en ligne, encadrement des entraînements de joueurs esportifs. Le site devait contenir une application de chat pour les utilisateurs avec un système de login/register
                                             et une interface administrateur. </p>
-                                        <div class="btn_redirect">
-                                            <a href="public/index.php">Voir le projets<i class='bx bx-right-arrow-alt'></i></a>
-                                        </div>
                                     </div>
-
                                 </div>
                                 <div class="projet_infos">
                                     <h3 class="title">AMON E-SPORT</h3>
                                     <p class="langage">HTML, SCSS, JS, LARAVEL, MYSQL</p>
                                 </div>
                             </li>
-
                             <li class="projet_card" data-aos="zoom-in-up" data-aos-delay="100">
                                 <div class="projet_illustration img_container">
                                     <div class="img_container">
@@ -275,14 +308,12 @@
                                             critère comme avoir une interface graphique avec javafx. Elle devait aussi avoir un générateur de code-barres pour les entrées dans la salle. Il fallait également créer une connexion admin pour pouvoir gérer
                                             la salle de sport. L'application à été réaliser avec Maven.</p>
                                     </div>
-
                                 </div>
                                 <div class="projet_infos">
                                     <h3 class="title">C-FUN</h3>
                                     <p class="langage">JAVA, MAVEN, MYSQL</p>
                                 </div>
                             </li>
-
                             <li class="projet_card" data-aos="zoom-in-up" data-aos-delay="100">
                                 <div class="projet_illustration img_container">
                                     <div class="img_container">
@@ -298,14 +329,12 @@
                                             <a href="https://ukerun.fr/index.php" target="blank">Voir le projets<i class='bx bx-right-arrow-alt'></i></a>
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="projet_infos">
                                     <h3 class="title">Ukerun</h3>
                                     <p class="langage">HTML, CSS, JS, PHP, MYSQL</p>
                                 </div>
                             </li>
-
                             <li class="projet_card" data-aos="zoom-in-up" data-aos-delay="100">
                                 <div class="projet_illustration img_container">
                                     <div class="img_container">
@@ -317,19 +346,15 @@
                                     <div class="desc">
                                         <p>L'application quiz à été réaliser au cours de mon BTS. Le but du projet était de réaliser de A à Z en suivant des étapes de création et en testant l'application. Les données des quiz étaient crées en JSON.</p>
                                     </div>
-
                                 </div>
                                 <div class="projet_infos">
                                     <h3 class="title">Quiz app</h3>
                                     <p class="langage">HTML, CSS, JS, JSON</p>
                                 </div>
                             </li>
-
                         </ul>
-
                     </div>
                 </div>
-
                 <div class="svg_bg">
                     <img src="assets/IMG/svgBg3.svg" alt="">
                 </div>
@@ -340,7 +365,6 @@
 
         <section id="contact">
             <div class="container">
-
                 <div class="contact_container" data-aos="fade-up">
                     <div class="form_container">
                         <h2>Contactez-Moi</h2>
@@ -387,6 +411,8 @@
 
     <!-- Script js -->
     <script src="assets/libs/aos/aos.js"></script>
+    <script src="assets/libs/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/libs/slick/slick.min.js"></script>
     <script src="assets/JS/main.js"></script>
 </body>
 
