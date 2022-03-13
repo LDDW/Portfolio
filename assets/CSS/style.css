@@ -405,7 +405,6 @@ section .container {
 }
 #about-me .container .img_container {
   padding: 15px;
-  max-width: 250px;
 }
 #about-me .container .slider_container {
   margin-bottom: 60px;
