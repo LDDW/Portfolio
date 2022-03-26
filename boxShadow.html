@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Shadow Generator</title>
+    <link rel="stylesheet" href="assets/CSS/boxShadow.css">
+    <link rel="stylesheet" href="assets/libs/boxicons/css/boxicons.min.css">
+</head>
+
+<body>
+    <main>
+        <div class="preview">
+            <div class="preview_cube"></div>
+        </div>
+        <div class="settings">
+            <h2>Box-Shadow Generator settings</h2>
+            <div class="color">
+                <label for="inputColorBox">Color box</label>
+                <input type="color" name="inputColor" id="inputColorBox">
+            </div>
+            <div class="color">
+                <label for="inputColorShadow">Color shadow</label>
+                <input type="color" name="inputColor" id="inputColorShadow">
+            </div>
+            <div class="range">
+                <label for="inputRangeOpacity">Opacity</label>
+                <input type="range" min="0" max="100" name="inputRangeOpacity" id="inputRangeOpacity">
+                <span class="value"></span>
+            </div>
+            <div class="range">
+                <label for="inputRangeX">Horizontale </label>
+                <input type="range" min="0" max="100" name="inputRangeX" id="inputRangeX">
+                <span class="value"></span>
+            </div>
+            <div class="range">
+                <label for="inputRangeY">Vertical</label>
+                <input type="range" min="0" max="100" name="inputRangeY" id="inputRangeY">
+                <span class="value"></span>
+            </div>
+            <div class="range">
+                <label for="inputRangeBlur">Blur</label>
+                <input type="range" min="0" max="100" name="inputRangeBlur" id="inputRangeBlur">
+                <span class="value"></span>
+            </div>
+            <div class="range">
+                <label for="inputRangeSpread">Spread</label>
+                <input type="range" min="-100" max="100" name="inputRangeSpread" id="inputRangeSpread">
+                <span class="value"></span>
+            </div>
+            <div class="option">
+                <p class="check_inset">Inset</p>
+                <span class="switch_btn"></span>
+            </div>
+            <div class="bg_code_container">
+                <textarea class="bg_code" rows="3" disabled></textarea>
+                <div class="code_btn">
+                    <div class="btn btn_reset"><i class='bx bx-reset'></i></div>
+                    <div class="btn btn_copy_css">copy css</div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/JS/boxShadow.js"></script>
+</body>
+
+</html>
